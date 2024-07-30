@@ -7,14 +7,16 @@
   justify-content: space-between;
   align-items: center;
 }
-/* input {
-  cursor: default;
-  &:focus {
-    outline: none;
-  }
-} */
-
+.inputForCopy {
+  position: absolute;
+  left: -10000px;
+}
+.copyContainer {
+  display: flex;
+  align-items: center;
+}
 .copyIcon {
   width: 21px;
   height: 24px;
+  margin-left: 12px;
 }

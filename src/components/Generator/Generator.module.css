@@ -1,0 +1,14 @@
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.checkboxRow {
+  font-size: var(--font-body);
+  height: 23px;
+  margin: 10px 0;
+}
+.checkbox {
+  margin-right: 12px;
+}
