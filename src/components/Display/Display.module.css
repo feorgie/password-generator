@@ -1,0 +1,20 @@
+.container {
+  background-color: var(--dark-grey);
+  height: 80px;
+  margin-bottom: var(--padding-regular);
+  padding: 0 var(--padding-regular);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* input {
+  cursor: default;
+  &:focus {
+    outline: none;
+  }
+} */
+
+.copyIcon {
+  width: 21px;
+  height: 24px;
+}

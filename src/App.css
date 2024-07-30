@@ -1,3 +1,67 @@
-.App {
+:root {
+  /* colors */
+  --very-dark-grey: #18171f;
+  --almost-white: #e6e5ea;
+  --grey: #817d92;
+  --dark-grey: #24232c;
+  --green: #a4ffaf;
+  --red: #f64a4a;
+  --orange: #fb7c58;
+  --yellow: #f8cd65;
+  /* typography */
+  --font-large: 32px;
+  --font-medium: 24px;
+  --font-body: 18px;
+  /* positioning */
+  --padding-regular: 32px;
+
+  background-color: var(--very-dark-grey);
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  /* font */
   text-align: center;
+  color: var(--almost-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.appContainer {
+  justify-self: center;
+}
+.title {
+  color: var(--grey);
+}
+.sectionGenerator {
+  width: 540px;
+  height: 632px;
+  margin-top: var(--padding-regular);
+}
+.generator {
+  height: 528px;
+  padding: 12px 32px 32px;
+  background-color: var(--dark-grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.fontBody {
+  font-size: var(--font-body);
+}
+.fontMedium {
+  font-size: var(--font-medium);
+}
+.fontLarge {
+  font-size: var(--font-large);
+}
+.fontGrey {
+  color: var(--grey);
+}
+.green {
+  color: var(--green);
 }

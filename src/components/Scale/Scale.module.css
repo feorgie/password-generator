@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  div {
+    width: 10px;
+    height: 28px;
+    margin: 0 2px;
+  }
+}
+.red {
+  background-color: var(--red);
+}
+.orange {
+  background-color: var(--orange);
+}
+.yellow {
+  background-color: var(--yellow);
+}
+.green {
+  background-color: var(--green);
+}
+.empty {
+  border: solid var(--almost-white) 2px;
+}

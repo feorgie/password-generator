@@ -1,0 +1,8 @@
+.button {
+  height: 65px;
+  background-color: var(--green);
+  &::after {
+    content: url("./icon-arrow-right.svg");
+    padding-left: 24px;
+  }
+}
