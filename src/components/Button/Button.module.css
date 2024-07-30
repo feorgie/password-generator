@@ -1,4 +1,5 @@
 .button {
+  color: var(--dark-grey);
   height: 65px;
   background-color: var(--green);
   &::after {

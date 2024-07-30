@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "jetbrains";
+  src: url("fonts/JetBrainsMono-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   /* colors */
   --very-dark-grey: #18171f;
@@ -9,6 +15,7 @@
   --orange: #fb7c58;
   --yellow: #f8cd65;
   /* typography */
+
   --font-large: 32px;
   --font-medium: 24px;
   --font-body: 18px;
@@ -17,13 +24,15 @@
 
   background-color: var(--very-dark-grey);
   * {
-    padding: 0;
-    margin: 0;
+    /* font */
+    font-family: "jetbrains";
+    font-size: var(--font-body);
+    text-align: center;
+    color: var(--almost-white);
+    /* padding: 0;
+    margin: 0; */
     box-sizing: border-box;
   }
-  /* font */
-  text-align: center;
-  color: var(--almost-white);
 
   display: flex;
   flex-direction: column;
@@ -32,7 +41,7 @@
 }
 
 .appContainer {
-  justify-self: center;
+  /* justify-self: center; */
 }
 .title {
   color: var(--grey);
@@ -41,6 +50,9 @@
   width: 540px;
   height: 632px;
   margin-top: var(--padding-regular);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .generator {
   height: 528px;

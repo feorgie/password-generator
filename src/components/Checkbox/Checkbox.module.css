@@ -1,5 +1,7 @@
 .container {
   display: flex;
+  align-items: center;
+  height: 23px;
 }
 .checkbox {
   margin-right: 12px;
