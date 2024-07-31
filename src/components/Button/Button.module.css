@@ -13,4 +13,7 @@
     border: solid var(--green) 2px;
     color: var(--green);
   }
+  @media (max-width: 600px) {
+    height: 56px;
+  }
 }

@@ -6,6 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 600px) {
+    padding: 0 var(--padding-regular-mobile);
+    height: 64px;
+  }
 }
 .inputForCopy {
   position: absolute;

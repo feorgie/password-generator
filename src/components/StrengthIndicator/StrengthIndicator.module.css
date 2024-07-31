@@ -6,10 +6,16 @@
   width: 100%;
   height: 72px;
   padding: 0 24px;
+  @media (max-width: 600px) {
+    height: 56px;
+  }
 }
 .description {
   font-size: var(--font-medium);
   flex-grow: 2;
   text-align: end;
   margin-right: 12px;
+  @media (max-width: 600px) {
+    font-size: var(--font-medium-mobile);
+  }
 }

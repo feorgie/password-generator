@@ -9,6 +9,9 @@
   height: 23px;
   margin: 10px 0;
   display: flex;
+  @media (max-width: 600px) {
+    font-size: var(--font-body-mobile);
+  }
 }
 .checkboxInput {
   -webkit-appearance: none;

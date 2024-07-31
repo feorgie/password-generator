@@ -17,31 +17,31 @@
   /* typography */
 
   --font-large: 32px;
+  --font-large-mobile: 24px;
   --font-medium: 24px;
+  --font-medium-mobile: 18px;
   --font-body: 18px;
+  --font-body-mobile: 16px;
   /* positioning */
   --padding-regular: 32px;
+  --padding-regular-mobile: 16px;
 
   background-color: var(--very-dark-grey);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   * {
     /* font */
     font-family: "jetbrains";
     font-size: var(--font-body);
     text-align: center;
     color: var(--almost-white);
-    /* padding: 0;
-    margin: 0; */
     box-sizing: border-box;
   }
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.appContainer {
-  /* justify-self: center; */
 }
 .title {
   color: var(--grey);
@@ -53,6 +53,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    max-width: 343px;
+    max-height: 540px;
+    margin-top: 0;
+  }
 }
 .generator {
   height: 528px;
@@ -64,12 +69,21 @@
 }
 .fontBody {
   font-size: var(--font-body);
+  @media (max-width: 600px) {
+    font-size: var(--font-body-mobile);
+  }
 }
 .fontMedium {
   font-size: var(--font-medium);
+  @media (max-width: 600px) {
+    font-size: var(--font-medium-mobile);
+  }
 }
 .fontLarge {
   font-size: var(--font-large);
+  @media (max-width: 600px) {
+    font-size: var(--font-large-mobile);
+  }
 }
 .fontGrey {
   color: var(--grey);
