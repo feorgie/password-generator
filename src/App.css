@@ -22,6 +22,10 @@
   --font-medium-mobile: 18px;
   --font-body: 18px;
   --font-body-mobile: 16px;
+  --line-height-large: 43px;
+  --line-height-medium: 31px;
+  --line-height-body: 23px;
+  --line-height-body-mobile: 21px;
   /* positioning */
   --padding-regular: 32px;
   --padding-regular-mobile: 16px;
@@ -72,20 +76,26 @@
 }
 .fontBody {
   font-size: var(--font-body);
+  line-height: var(--line-height-body);
   @media (max-width: 600px) {
     font-size: var(--font-body-mobile);
+    line-height: var(--line-height-body-mobile);
   }
 }
 .fontMedium {
   font-size: var(--font-medium);
+  line-height: var(--line-height-medium);
   @media (max-width: 600px) {
-    font-size: var(--font-medium-mobile);
+    font-size: var(--font-body);
+    line-height: var(--line-height-body);
   }
 }
 .fontLarge {
   font-size: var(--font-large);
+  line-height: var(--line-height-large);
   @media (max-width: 600px) {
-    font-size: var(--font-large-mobile);
+    font-size: var(--font-medium);
+    line-height: var(--line-height-medium);
   }
 }
 .fontGrey {
