@@ -19,24 +19,20 @@ const Generator = ({ className, setPassword, isEmpty }) => {
   });
   const checkboxOptions = [
     {
-      id: "uppercase",
+      name: "uppercase",
       label: "Include Uppercase Letters",
-      isChecked: true,
     },
     {
-      id: "lowercase",
+      name: "lowercase",
       label: "Include Lowercase Letters",
-      isChecked: true,
     },
     {
-      id: "numbers",
+      name: "numbers",
       label: "Include Numbers",
-      isChecked: true,
     },
     {
-      id: "symbols",
+      name: "symbols",
       label: "Include Symbols",
-      isChecked: true,
     },
   ];
   // get the total number of selected character types
@@ -91,58 +87,21 @@ const Generator = ({ className, setPassword, isEmpty }) => {
         handleSliderChange={handleSliderChange}
       />
       <div className={css.checkboxContainer}>
-        <label className={css.checkboxRow}>
-          <input
-            className={`${css.checkboxInput} ${
-              checked["uppercase"] && css.checked
-            }`}
-            type="checkbox"
-            name={"uppercase"}
-            checked={checked["uppercase"]}
-            disabled={numberOfCheckedOptions === 1 && checked["uppercase"]}
-            onChange={(e) => handleCheckbox(e)}
-          />
-          Include Uppercase Letters
-        </label>
-        <label className={css.checkboxRow}>
-          <input
-            className={`${css.checkboxInput} ${
-              checked["lowercase"] && css.checked
-            }`}
-            type="checkbox"
-            name={"lowercase"}
-            checked={checked["lowercase"]}
-            disabled={numberOfCheckedOptions === 1 && checked["lowercase"]}
-            onChange={(e) => handleCheckbox(e)}
-          />
-          Include Lowercase Letters
-        </label>
-        <label className={css.checkboxRow}>
-          <input
-            className={`${css.checkboxInput} ${
-              checked["numbers"] && css.checked
-            }`}
-            type="checkbox"
-            name={"numbers"}
-            checked={checked["numbers"]}
-            disabled={numberOfCheckedOptions === 1 && checked["numbers"]}
-            onChange={(e) => handleCheckbox(e)}
-          />
-          Include Numbers
-        </label>
-        <label className={css.checkboxRow}>
-          <input
-            className={`${css.checkboxInput} ${
-              checked["symbols"] && css.checked
-            }`}
-            type="checkbox"
-            name={"symbols"}
-            checked={checked["symbols"]}
-            disabled={numberOfCheckedOptions === 1 && checked["symbols"]}
-            onChange={(e) => handleCheckbox(e)}
-          />
-          Include Symbols
-        </label>
+        {checkboxOptions.map((option) => (
+          <label className={css.checkboxRow}>
+            <input
+              className={`${css.checkboxInput} ${
+                checked[option.name] && css.checked
+              }`}
+              type="checkbox"
+              name={option.name}
+              checked={checked[option.name]}
+              disabled={numberOfCheckedOptions === 1 && checked[option.name]}
+              onChange={(e) => handleCheckbox(e)}
+            />
+            {option.label}
+          </label>
+        ))}
       </div>
       <StrengthIndicator strength={passwordStrength} />
       <Button onClick={handleSubmit} />
