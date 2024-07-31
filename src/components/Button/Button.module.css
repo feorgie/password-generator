@@ -6,4 +6,7 @@
     content: url("./icon-arrow-right.svg");
     padding-left: 24px;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }

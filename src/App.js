@@ -4,7 +4,7 @@ import Generator from "./components/Generator/Generator";
 import { useState } from "react";
 
 function App() {
-  const [password, setPassword] = useState("P4$5W0rD");
+  const [password, setPassword] = useState("");
   const [copied, setCopied] = useState(false);
 
   const handlePasswordUpdate = (newPassword) => {
