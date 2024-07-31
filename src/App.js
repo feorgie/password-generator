@@ -14,14 +14,16 @@ function App() {
     setCopied(false);
   };
 
-  const copyToClipboard = () => {
+  const copyToClipboard = async () => {
     if (isEmpty) {
       return;
     }
-    const targetText = document.querySelector("#inputForCopy");
-    targetText.select();
-    document.execCommand("copy");
-    setCopied(true);
+    try {
+      await navigator.clipboard.writeText(password);
+      setCopied(true);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
