@@ -39,6 +39,9 @@ const Generator = ({ className, setPassword, isEmpty }) => {
   const numberOfCheckedOptions = Object.values(checked).filter((x) => x).length;
 
   const handleSubmit = () => {
+    if (length && numberOfCheckedOptions === 0) {
+      return;
+    }
     let characterList = "";
     let newPassword = "";
     // populate available character list
@@ -88,19 +91,13 @@ const Generator = ({ className, setPassword, isEmpty }) => {
       />
       <div className={css.checkboxContainer}>
         {checkboxOptions.map((option) => (
-          <label className={css.checkboxRow}>
-            <input
-              className={`${css.checkboxInput} ${
-                checked[option.name] && css.checked
-              }`}
-              type="checkbox"
-              name={option.name}
-              checked={checked[option.name]}
-              disabled={numberOfCheckedOptions === 1 && checked[option.name]}
-              onChange={(e) => handleCheckbox(e)}
-            />
-            {option.label}
-          </label>
+          <Checkbox
+            label={option.label}
+            handleCheckbox={handleCheckbox}
+            name={option.name}
+            checked={checked}
+            numberOfCheckedOptions={numberOfCheckedOptions}
+          />
         ))}
       </div>
       <StrengthIndicator strength={passwordStrength} />

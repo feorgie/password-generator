@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import css from "./RangeSelect.module.css";
 
 const RangeSelect = ({ handleSliderChange, max, min, value }) => {
@@ -6,17 +6,17 @@ const RangeSelect = ({ handleSliderChange, max, min, value }) => {
   const [sliderRange, setSliderRange] = useState(value);
   const sliderRef = useRef(null);
 
-  const handleSliderInput = () => {
+  const handleSliderInput = useCallback(() => {
     const range = max - min;
     const distance = sliderRef.current.value - min;
     const percentage = (distance / range) * 100;
     setSliderRange(percentage);
     setInputValue(sliderRef.current.value);
     handleSliderChange(sliderRef.current.value);
-  };
+  }, [handleSliderChange, max, min]);
   useEffect(() => {
     handleSliderInput();
-  }, [sliderRef]);
+  }, [handleSliderInput, sliderRef]);
 
   return (
     <>

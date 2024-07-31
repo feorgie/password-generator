@@ -1,20 +1,25 @@
 import React from "react";
 import css from "./Checkbox.module.css";
 
-const Checkbox = ({ label, checked, handleCheckbox, name }) => {
+const Checkbox = ({
+  checked,
+  label,
+  handleCheckbox,
+  name,
+  numberOfCheckedOptions,
+}) => {
   return (
-    <div className={css.container}>
-      <label className="font-body">
-        <input
-          className={css.checkbox}
-          type="checkbox"
-          name={name}
-          checked={checked}
-          onChange={(e) => handleCheckbox(e)}
-        />
-        {label}
-      </label>
-    </div>
+    <label className={css.checkboxRow}>
+      <input
+        className={`${css.checkboxInput} ${checked[name] && css.checked}`}
+        type="checkbox"
+        name={name}
+        checked={checked[name]}
+        disabled={numberOfCheckedOptions === 1 && checked[name]}
+        onChange={(e) => handleCheckbox(e)}
+      />
+      {label}
+    </label>
   );
 };
 
