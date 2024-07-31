@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import css from "./RangeSelect.module.css";
 
-const RangeSelect = ({ length, handleSliderChange }) => {
-  const max = 20;
-  const min = 1;
-  const value = 10;
-
+const RangeSelect = ({ handleSliderChange, max, min, value }) => {
   const [inputValue, setInputValue] = useState(value);
   const [sliderRange, setSliderRange] = useState(value);
   const sliderRef = useRef(null);
@@ -26,7 +22,7 @@ const RangeSelect = ({ length, handleSliderChange }) => {
     <>
       <div className={css.textContainer}>
         <p className="fontBody">Character length</p>
-        <p className="fontLarge green">{length}</p>
+        <p className="fontLarge green">{value}</p>
       </div>
       <div className={css.sliderContainer}>
         <input

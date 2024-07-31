@@ -83,7 +83,12 @@ const Generator = ({ className, setPassword }) => {
 
   return (
     <div className={className}>
-      <RangeSelect length={length} handleSliderChange={handleSliderChange} />
+      <RangeSelect
+        max={20}
+        min={1}
+        value={length}
+        handleSliderChange={handleSliderChange}
+      />
       <div className={css.checkboxContainer}>
         <label className={css.checkboxRow}>
           <input
