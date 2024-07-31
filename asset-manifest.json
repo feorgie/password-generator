@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/password-generator/static/css/main.99bdf308.css",
+    "main.js": "/password-generator/static/js/main.ab12530b.js",
+    "static/media/JetBrainsMono-Bold.ttf": "/password-generator/static/media/JetBrainsMono-Bold.a0394baa305e2ce71971.ttf",
+    "index.html": "/password-generator/index.html",
+    "static/media/icon-check.svg": "/password-generator/static/media/icon-check.c0e2bb9365c6d9e8bbe4.svg",
+    "main.99bdf308.css.map": "/password-generator/static/css/main.99bdf308.css.map",
+    "main.ab12530b.js.map": "/password-generator/static/js/main.ab12530b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99bdf308.css",
+    "static/js/main.ab12530b.js"
+  ]
+}
