@@ -29,6 +29,14 @@
   z-index: 3;
   width: 0;
   position: relative;
+  width: 28px;
+  height: 28px;
+  background-color: var(--almost-white);
+  border-radius: 50%;
+}
+.slider:hover::-webkit-slider-thumb {
+  background-color: var(--very-dark-grey);
+  border: solid var(--green) 2px;
 }
 .progress {
   width: 0;
@@ -38,17 +46,5 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  pointer-events: none;
-}
-.sliderThumb {
-  width: 28px;
-  height: 28px;
-  background-color: var(--almost-white);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: -0.5em;
-  transform: translateY(-50%);
-  z-index: 2;
   pointer-events: none;
 }

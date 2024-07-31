@@ -40,10 +40,6 @@ const RangeSelect = ({ handleSliderChange, max, min, value }) => {
           onInput={handleSliderInput}
         />
         <div
-          className={css.sliderThumb}
-          style={{ left: `calc(${sliderRange}%)` }}
-        ></div>
-        <div
           className={css.progress}
           style={{ width: `${sliderRange}%` }}
         ></div>

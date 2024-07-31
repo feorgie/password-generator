@@ -84,7 +84,7 @@ const Generator = ({ className, setPassword, isEmpty }) => {
     <div className={className}>
       <RangeSelect
         max={20}
-        min={10}
+        min={0}
         value={passwordLength}
         handleSliderChange={handleSliderChange}
       />
