@@ -10,7 +10,13 @@ import css from "./Generator.module.css";
 const Generator = ({ className, setPassword }) => {
   const [length, setLength] = useState(10); // initial password length
   const [passwordStrength, setPasswordStrength] = useState(1); // this is rating 1-4
-
+  // checked state values for checkboxes
+  const [checked, setChecked] = useState({
+    uppercase: true,
+    lowercase: true,
+    numbers: true,
+    symbols: true,
+  });
   const checkboxOptions = [
     {
       id: "uppercase",
@@ -33,13 +39,8 @@ const Generator = ({ className, setPassword }) => {
       isChecked: true,
     },
   ];
-  // checked state values for checkboxes
-  const [checked, setChecked] = useState({
-    uppercase: true,
-    lowercase: true,
-    numbers: true,
-    symbols: true,
-  });
+  // get the total number of selected character types
+  const numberOfCheckedOptions = Object.values(checked).filter((x) => x).length;
 
   const handleSubmit = () => {
     let characterList = "";
@@ -54,8 +55,6 @@ const Generator = ({ className, setPassword }) => {
       newPassword +=
         characterList[Math.floor(Math.random() * characterList.length)];
     }
-    // get the total number of selected character types
-    let numberOfCheckedOptions = Object.values(checked).filter((x) => x).length;
     // set new password and password strength value
     setPassword(newPassword);
     setPasswordStrength(
@@ -92,40 +91,52 @@ const Generator = ({ className, setPassword }) => {
       <div className={css.checkboxContainer}>
         <label className={css.checkboxRow}>
           <input
-            className={css.checkbox}
+            className={`${css.checkboxInput} ${
+              checked["uppercase"] && css.checked
+            }`}
             type="checkbox"
             name={"uppercase"}
             checked={checked["uppercase"]}
+            disabled={numberOfCheckedOptions === 1 && checked["uppercase"]}
             onChange={(e) => handleCheckbox(e)}
           />
           Include Uppercase Letters
         </label>
         <label className={css.checkboxRow}>
           <input
-            className={css.checkbox}
+            className={`${css.checkboxInput} ${
+              checked["lowercase"] && css.checked
+            }`}
             type="checkbox"
             name={"lowercase"}
             checked={checked["lowercase"]}
+            disabled={numberOfCheckedOptions === 1 && checked["lowercase"]}
             onChange={(e) => handleCheckbox(e)}
           />
           Include Lowercase Letters
         </label>
         <label className={css.checkboxRow}>
           <input
-            className={css.checkbox}
+            className={`${css.checkboxInput} ${
+              checked["numbers"] && css.checked
+            }`}
             type="checkbox"
             name={"numbers"}
             checked={checked["numbers"]}
+            disabled={numberOfCheckedOptions === 1 && checked["numbers"]}
             onChange={(e) => handleCheckbox(e)}
           />
           Include Numbers
         </label>
         <label className={css.checkboxRow}>
           <input
-            className={css.checkbox}
+            className={`${css.checkboxInput} ${
+              checked["symbols"] && css.checked
+            }`}
             type="checkbox"
             name={"symbols"}
             checked={checked["symbols"]}
+            disabled={numberOfCheckedOptions === 1 && checked["symbols"]}
             onChange={(e) => handleCheckbox(e)}
           />
           Include Symbols
