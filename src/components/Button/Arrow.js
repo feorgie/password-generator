@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Arrow = ({ className, isHoverActive }) => {
   return (
     <svg
