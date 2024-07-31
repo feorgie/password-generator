@@ -7,12 +7,17 @@ function App() {
   const [password, setPassword] = useState("");
   const [copied, setCopied] = useState(false);
 
+  const isEmpty = !password;
+
   const handlePasswordUpdate = (newPassword) => {
     setPassword(newPassword);
     setCopied(false);
   };
 
   const copyToClipboard = () => {
+    if (isEmpty) {
+      return;
+    }
     const targetText = document.querySelector("#inputForCopy");
     targetText.select();
     document.execCommand("copy");
@@ -27,8 +32,13 @@ function App() {
           copied={copied}
           password={password}
           handleClick={copyToClipboard}
+          isEmpty={isEmpty}
         />
-        <Generator className="generator" setPassword={handlePasswordUpdate} />
+        <Generator
+          className="generator"
+          setPassword={handlePasswordUpdate}
+          isEmpty={isEmpty}
+        />
       </section>
     </div>
   );

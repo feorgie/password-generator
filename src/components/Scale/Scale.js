@@ -9,8 +9,8 @@ const Scale = ({ rating }) => {
   };
   return (
     <div className={css.container}>
-      <div className={css[colors[rating]]}></div>
-      <div className={css[rating === 1 ? "empty" : colors[rating]]}></div>
+      <div className={css[rating === 0 ? "empty" : colors[rating]]}></div>
+      <div className={css[rating <= 1 ? "empty" : colors[rating]]}></div>
       <div className={css[rating <= 2 ? "empty" : colors[rating]]}></div>
       <div className={css[rating <= 3 ? "empty" : colors[rating]]}></div>
     </div>

@@ -22,4 +22,7 @@
   &:hover {
     cursor: pointer;
   }
+  &.inactive:hover {
+    cursor: default;
+  }
 }

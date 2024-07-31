@@ -5,8 +5,11 @@
   align-items: center;
   width: 100%;
   height: 72px;
+  padding: 0 24px;
 }
 .description {
   font-size: var(--font-medium);
-  width: auto;
+  flex-grow: 2;
+  text-align: end;
+  margin-right: 12px;
 }

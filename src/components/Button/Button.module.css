@@ -2,11 +2,15 @@
   color: var(--dark-grey);
   height: 65px;
   background-color: var(--green);
+  border: none;
   &::after {
     content: url("./icon-arrow-right.svg");
     padding-left: 24px;
   }
   &:hover {
     cursor: pointer;
+    background-color: var(--dark-grey);
+    border: solid var(--green) 2px;
+    color: var(--green);
   }
 }

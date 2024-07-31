@@ -7,15 +7,15 @@ import Button from "../Button/Button";
 //dev
 import css from "./Generator.module.css";
 
-const Generator = ({ className, setPassword }) => {
-  const [length, setLength] = useState(10); // initial password length
-  const [passwordStrength, setPasswordStrength] = useState(1); // this is rating 1-4
+const Generator = ({ className, setPassword, isEmpty }) => {
+  const [length, setLength] = useState(0); // initial password length
+  const [passwordStrength, setPasswordStrength] = useState(0); // this is rating 0-4
   // checked state values for checkboxes
   const [checked, setChecked] = useState({
-    uppercase: true,
-    lowercase: true,
-    numbers: true,
-    symbols: true,
+    uppercase: false,
+    lowercase: false,
+    numbers: false,
+    symbols: false,
   });
   const checkboxOptions = [
     {
@@ -58,7 +58,9 @@ const Generator = ({ className, setPassword }) => {
     // set new password and password strength value
     setPassword(newPassword);
     setPasswordStrength(
-      newPassword.length >= 10 && numberOfCheckedOptions >= 3
+      newPassword.length === 0
+        ? 0
+        : newPassword.length >= 10 && numberOfCheckedOptions >= 3
         ? 4
         : newPassword.length >= 8 && numberOfCheckedOptions >= 2
         ? 3
@@ -84,7 +86,7 @@ const Generator = ({ className, setPassword }) => {
     <div className={className}>
       <RangeSelect
         max={20}
-        min={1}
+        min={0}
         value={length}
         handleSliderChange={handleSliderChange}
       />

@@ -28,8 +28,8 @@ const RangeSelect = ({ handleSliderChange, max, min, value }) => {
         <input
           className={css.slider}
           type="range"
-          min={1}
-          max={20}
+          min={min}
+          max={max}
           step={1}
           value={inputValue}
           ref={sliderRef}
