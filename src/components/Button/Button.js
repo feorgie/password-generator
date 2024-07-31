@@ -3,6 +3,7 @@ import css from "./Button.module.css";
 import { Arrow } from "./Arrow";
 
 const Button = ({ onClick }) => {
+  // set and manage hover state for conditional styling button svg
   const [hoverActive, setHoverActive] = useState(false);
   const toggleHover = () => {
     setHoverActive(!hoverActive);

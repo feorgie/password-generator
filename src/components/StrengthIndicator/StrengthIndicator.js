@@ -3,6 +3,7 @@ import Scale from "../Scale/Scale";
 import css from "./StrengthIndicator.module.css";
 
 const StrengthIndicator = ({ strength = 0 }) => {
+  // define descriptions for ratings
   const descriptions = {
     0: "",
     1: "TOO WEAK!",

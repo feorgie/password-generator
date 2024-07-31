@@ -4,13 +4,12 @@ import Checkbox from "../Checkbox/Checkbox";
 import StrengthIndicator from "../StrengthIndicator/StrengthIndicator";
 import Button from "../Button/Button";
 
-//dev
 import css from "./Generator.module.css";
 
 const Generator = ({ className, setPassword, isEmpty }) => {
-  const [length, setLength] = useState(0); // initial password length
+  const [passwordLength, setPasswordLength] = useState(0); // initial password length
   const [passwordStrength, setPasswordStrength] = useState(0); // this is rating 0-4
-  // checked state values for checkboxes
+  // checked-state values for checkboxes
   const [checked, setChecked] = useState({
     uppercase: false,
     lowercase: false,
@@ -39,7 +38,7 @@ const Generator = ({ className, setPassword, isEmpty }) => {
   const numberOfCheckedOptions = Object.values(checked).filter((x) => x).length;
 
   const handleSubmit = () => {
-    if (length && numberOfCheckedOptions === 0) {
+    if (passwordLength && numberOfCheckedOptions === 0) {
       return;
     }
     let characterList = "";
@@ -50,7 +49,7 @@ const Generator = ({ className, setPassword, isEmpty }) => {
     if (checked["numbers"]) characterList += "0123456789";
     if (checked["symbols"]) characterList += "!@#$%^&*()";
     // build new password adding random values up to selected length
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < passwordLength; i++) {
       newPassword +=
         characterList[Math.floor(Math.random() * characterList.length)];
     }
@@ -71,7 +70,7 @@ const Generator = ({ className, setPassword, isEmpty }) => {
 
   const handleSliderChange = (value) => {
     //set password length
-    setLength(value);
+    setPasswordLength(value);
   };
   const handleCheckbox = (event) => {
     // set checked state on character set checkbox
@@ -85,16 +84,17 @@ const Generator = ({ className, setPassword, isEmpty }) => {
     <div className={className}>
       <RangeSelect
         max={20}
-        min={0}
-        value={length}
+        min={10}
+        value={passwordLength}
         handleSliderChange={handleSliderChange}
       />
       <div className={css.checkboxContainer}>
-        {checkboxOptions.map((option) => (
+        {checkboxOptions.map(({ name, label }) => (
           <Checkbox
-            label={option.label}
+            key={`checkbox-${name}`}
+            label={label}
             handleCheckbox={handleCheckbox}
-            name={option.name}
+            name={name}
             checked={checked}
             numberOfCheckedOptions={numberOfCheckedOptions}
           />

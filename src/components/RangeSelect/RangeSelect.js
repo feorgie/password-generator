@@ -7,13 +7,17 @@ const RangeSelect = ({ handleSliderChange, max, min, value }) => {
   const sliderRef = useRef(null);
 
   const handleSliderInput = useCallback(() => {
+    // get percentage of slider bar to highlight
     const range = max - min;
-    const distance = sliderRef.current.value - min;
-    const percentage = (distance / range) * 100;
+    const currentPoint = sliderRef.current.value - min;
+    const percentage = (currentPoint / range) * 100;
+    // set values
     setSliderRange(percentage);
     setInputValue(sliderRef.current.value);
     handleSliderChange(sliderRef.current.value);
   }, [handleSliderChange, max, min]);
+
+  // update slider input on load
   useEffect(() => {
     handleSliderInput();
   }, [handleSliderInput, sliderRef]);

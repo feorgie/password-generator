@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./Scale.module.css";
 const Scale = ({ rating }) => {
+  // define colours for rating scale
   const colors = {
     1: "red",
     2: "orange",
