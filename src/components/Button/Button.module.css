@@ -3,10 +3,6 @@
   height: 65px;
   background-color: var(--green);
   border: none;
-  &::after {
-    content: url("./icon-arrow-right.svg");
-    padding-left: 24px;
-  }
   &:hover {
     cursor: pointer;
     background-color: var(--dark-grey);
@@ -16,4 +12,7 @@
   @media (max-width: 600px) {
     height: 56px;
   }
+}
+.arrow {
+  margin-left: 24px;
 }
